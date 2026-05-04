@@ -455,15 +455,10 @@ INSERT INTO Person (personId,firstName,lastName,dateOfBirth,nationality,email,ph
 VALUES (7,'Pep','Guardiola',DATE '1971-01-18','Spanish','guardiola@ftms.com','00441000010');
 INSERT INTO Person (personId,firstName,lastName,dateOfBirth,nationality,email,phoneNumber)
 VALUES (8,'Hansi','Flick',DATE '1965-02-24','German','flick@ftms.com','00341000011');
-
-INSERT INTO Manager (personId,clubId,coachingLicense,preferredFormation,yearsOfExperience)
-VALUES (9,4,'UEFA Pro','4-2-3-1',5);   -- Vincent Kompany → Bayern Munich
-INSERT INTO Manager (personId,clubId,coachingLicense,preferredFormation,yearsOfExperience)
-VALUES (10,5,'UEFA Pro','4-3-3',18);   -- Luis Enrique    → PSG
-
-
-
-
+INSERT INTO Person (personId,firstName,lastName,dateOfBirth,nationality,email,phoneNumber)
+VALUES (9,'Vincent','Kompany',DATE '1986-04-10','Belgian','kompany@ftms.com','00321000001');
+INSERT INTO Person (personId,firstName,lastName,dateOfBirth,nationality,email,phoneNumber)
+VALUES (10,'Luis','Enrique',DATE '1970-05-08','Spanish','enrique@ftms.com','00341000012');
 
 -- ── 9.3  Players ─────────────────────────────────────────────
 --  Inserted immediately after their Person rows (mandatory subtype rule).
@@ -486,6 +481,10 @@ INSERT INTO Manager (personId,clubId,coachingLicense,preferredFormation,yearsOfE
 VALUES (7,2,'UEFA Pro','4-3-3',20);   -- Pep Guardiola   → Manchester City
 INSERT INTO Manager (personId,clubId,coachingLicense,preferredFormation,yearsOfExperience)
 VALUES (8,3,'UEFA Pro','4-3-3',15);   -- Hansi Flick     → FC Barcelona
+INSERT INTO Manager (personId,clubId,coachingLicense,preferredFormation,yearsOfExperience)
+VALUES (9,4,'UEFA Pro','4-2-3-1',5);   -- Vincent Kompany → Bayern Munich
+INSERT INTO Manager (personId,clubId,coachingLicense,preferredFormation,yearsOfExperience)
+VALUES (10,5,'UEFA Pro','4-3-3',18);   -- Luis Enrique    → PSG
 
 -- ── 9.5  Agents ──────────────────────────────────────────────
 INSERT INTO Agent (agentId,firstName,lastName,agencyName,licenseNumber,commissionRate,email,phoneNumber)
