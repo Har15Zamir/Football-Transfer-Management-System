@@ -317,7 +317,7 @@ CREATE TABLE Transfer (
     -- Sells relationship: ON DELETE SET NULL — if selling club deleted, transfer record kept
     CONSTRAINT fk_tr_selling FOREIGN KEY (sellingClubId) REFERENCES Club(clubId) ON DELETE SET NULL,
     -- Negotiates relationship: agent is optional per transfer
-    CONSTRAINT fk_tr_agent   FOREIGN KEY (agentId)       REFERENCES Agent(agentId) ON DELETE CASCADE,
+    CONSTRAINT fk_tr_agent FOREIGN KEY (agentId) REFERENCES Agent(agentId) ON DELETE SET NULL,
     -- Business rule: transfer type must be one of the defined values
     CONSTRAINT ck_tr_type    CHECK (transferType IN ('Permanent','Loan','Free')),
     -- Business rule: transfer fee cannot be negative
