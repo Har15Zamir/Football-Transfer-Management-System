@@ -213,7 +213,7 @@ CREATE TABLE Manager (
     yearsOfExperience  NUMBER(2)       CONSTRAINT nn_mgr_exp  NOT NULL,
     -- personId is both PK and FK — implements EER specialization
     CONSTRAINT fk_manager_person FOREIGN KEY (personId) REFERENCES Person(personId) ON DELETE CASCADE,
-    CONSTRAINT fk_manager_club   FOREIGN KEY (clubId)   REFERENCES Club(clubId)     ON DELETE CASCADE,
+    CONSTRAINT fk_manager_club FOREIGN KEY (clubId) REFERENCES Club(clubId) ON DELETE SET NULL,  --change made
     -- Enforces "a club can have at most one manager" (1..1 Club side)
     CONSTRAINT uq_manager_club   UNIQUE (clubId),
     -- Business rule: years of experience cannot be negative
@@ -297,9 +297,9 @@ CREATE TABLE Transfer (
     -- SubjectOf relationship: every transfer has exactly one Person as subject
     CONSTRAINT fk_tr_person  FOREIGN KEY (personId)      REFERENCES Person(personId) ON DELETE CASCADE,
     -- Buys relationship: every transfer must have exactly one buying club
-    CONSTRAINT fk_tr_buying  FOREIGN KEY (buyingClubId)  REFERENCES Club(clubId)    ON DELETE CASCADE,
+    CONSTRAINT fk_tr_buying  FOREIGN KEY (buyingClubId)  REFERENCES Club(clubId), --change made
     -- Sells relationship: selling club is optional (free agents have no seller)
-    CONSTRAINT fk_tr_selling FOREIGN KEY (sellingClubId) REFERENCES Club(clubId)    ON DELETE CASCADE,
+    CONSTRAINT fk_tr_selling FOREIGN KEY (sellingClubId) REFERENCES Club(clubId) ON DELETE SET NULL, --change made
     -- Negotiates relationship: agent is optional per transfer
     CONSTRAINT fk_tr_agent   FOREIGN KEY (agentId)       REFERENCES Agent(agentId)  ON DELETE CASCADE,
     -- Business rule: transfer type must be one of the defined values
