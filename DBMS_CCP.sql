@@ -256,7 +256,7 @@ CREATE TABLE EmploymentContract (
     -- contractId is both PK and FK — implements EER specialization
     CONSTRAINT fk_ec_contract FOREIGN KEY (contractId) REFERENCES Contract(contractId) ON DELETE CASCADE,
     -- Holds relationship: each employment contract belongs to exactly one Club
-    CONSTRAINT fk_ec_club     FOREIGN KEY (clubId)     REFERENCES Club(clubId)         ON DELETE CASCADE,
+    CONSTRAINT fk_ec_club     FOREIGN KEY (clubId)     REFERENCES Club(clubId),
     -- Business rule: salary must be positive
     CONSTRAINT ck_ec_salary   CHECK (weeklySalary > 0),
     -- Business rule: monetary clauses cannot be negative if provided
@@ -275,7 +275,7 @@ CREATE TABLE SponsorshipContract (
     -- contractId is both PK and FK — implements EER specialization
     CONSTRAINT fk_sc_contract FOREIGN KEY (contractId) REFERENCES Contract(contractId) ON DELETE CASCADE,
     -- Maintains relationship: each sponsorship contract belongs to exactly one Sponsor
-    CONSTRAINT fk_sc_sponsor  FOREIGN KEY (sponsorId)  REFERENCES Sponsor(sponsorId)  ON DELETE CASCADE,
+    CONSTRAINT fk_sc_sponsor  FOREIGN KEY (sponsorId)  REFERENCES Sponsor(sponsorId),
     -- Business rule: payment frequency must be one of the defined values
     CONSTRAINT ck_sc_freq     CHECK (paymentFrequency IN ('Monthly','Quarterly','Annual')),
     -- Business rule: contract value must be positive
