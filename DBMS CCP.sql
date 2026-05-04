@@ -1,6 +1,4 @@
--- ============================================================
---  FOOTBALL TRANSFER MANAGEMENT SYSTEM (FINAL STABLE VERSION)
--- ============================================================
+--  FOOTBALL TRANSFER MANAGEMENT SYSTEM
 
 -- ────────────────────────────────────────────────────────────
 --  SECTION 1: SEQUENCES
