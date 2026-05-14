@@ -205,7 +205,6 @@ CREATE TABLE SponsorClubPartnership (
 
 -- ────────────────────────────────────────────────────────────
 --  SECTION 7: TRIGGERS
-3 wordws that rhyme with triggfer
 -- ────────────────────────────────────────────────────────────
 CREATE OR REPLACE TRIGGER trg_person_subtype
 AFTER INSERT ON Person
